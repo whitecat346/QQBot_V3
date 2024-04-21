@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_WithASM|Win32">
+      <Configuration>Debug_WithASM</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_WithASM|x64">
+      <Configuration>Debug_WithASM</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -32,6 +40,12 @@
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -40,6 +54,12 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -60,10 +80,16 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -73,10 +99,25 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <CodeAnalysisRuleSet>..\..\MyRuleSet.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|x64'">
+    <CodeAnalysisRuleSet>..\..\MyRuleSet.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <CodeAnalysisRuleSet>..\..\MyRuleSet.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
@@ -120,6 +161,29 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\Project\QQBot_V3\path;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_WithASM|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <EnableModules>true</EnableModules>
+      <BuildStlModules>true</BuildStlModules>
+      <ExpandAttributedSource>true</ExpandAttributedSource>
+      <AssemblerOutput>All</AssemblerOutput>
+      <UseUnicodeForAssemblerListing>true</UseUnicodeForAssemblerListing>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\Project\QQBot_V3\path;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,14 +206,156 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\Project\QQBot_V3\path;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\logger\cleanup_immediately_unittest.cc" />
+    <ClCompile Include="include\logger\cleanup_with_absolute_prefix_unittest.cc" />
+    <ClCompile Include="include\logger\cleanup_with_relative_prefix_unittest.cc" />
+    <ClCompile Include="include\logger\dcheck_unittest\glog_dcheck.cc" />
+    <ClCompile Include="include\logger\demangle.cc" />
+    <ClCompile Include="include\logger\demangle_unittest.cc" />
+    <ClCompile Include="include\logger\flags.cc" />
+    <ClCompile Include="include\logger\fuzz_demangle.cc" />
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_logging.cc" />
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_raw_logging.cc" />
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_stl_logging.cc" />
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_vlog_is_on.cc" />
+    <ClCompile Include="include\logger\logging.cc" />
+    <ClCompile Include="include\logger\logging_unittest.cc" />
+    <ClCompile Include="include\logger\log_severity_unittest\glog_log_severity_constants.cc" />
+    <ClCompile Include="include\logger\log_severity_unittest\glog_log_severity_conversion.cc" />
+    <ClCompile Include="include\logger\mock-log_unittest.cc" />
+    <ClCompile Include="include\logger\package_config_unittest\working_config\glog_package_config.cc" />
+    <ClCompile Include="include\logger\raw_logging.cc" />
+    <ClCompile Include="include\logger\signalhandler.cc" />
+    <ClCompile Include="include\logger\signalhandler_unittest.cc" />
+    <ClCompile Include="include\logger\stacktrace.cc" />
+    <ClCompile Include="include\logger\stacktrace_unittest.cc" />
+    <ClCompile Include="include\logger\stl_logging_unittest.cc" />
+    <ClCompile Include="include\logger\striplog_unittest.cc" />
+    <ClCompile Include="include\logger\symbolize.cc" />
+    <ClCompile Include="include\logger\symbolize_unittest.cc" />
+    <ClCompile Include="include\logger\utilities.cc" />
+    <ClCompile Include="include\logger\utilities_unittest.cc" />
+    <ClCompile Include="include\logger\vlog_is_on.cc" />
+    <ClCompile Include="include\logger\windows\port.cc" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="resource\Bot\BotClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="include\logger\config.h.cmake.in" />
+    <None Include="include\logger\demangle_unittest.sh" />
+    <None Include="include\logger\logging_striplog_test.sh" />
+    <None Include="include\logger\logging_unittest.err" />
+    <None Include="include\logger\logging_unittest.out" />
+    <None Include="include\logger\signalhandler_unittest.sh" />
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Bot\BotClient.h" />
+    <ClInclude Include="include\Internet\hv\AsyncHttpClient.h" />
+    <ClInclude Include="include\Internet\hv\axios.h" />
+    <ClInclude Include="include\Internet\hv\base64.h" />
+    <ClInclude Include="include\Internet\hv\Buffer.h" />
+    <ClInclude Include="include\Internet\hv\Channel.h" />
+    <ClInclude Include="include\Internet\hv\Event.h" />
+    <ClInclude Include="include\Internet\hv\EventLoop.h" />
+    <ClInclude Include="include\Internet\hv\EventLoopThread.h" />
+    <ClInclude Include="include\Internet\hv\EventLoopThreadPool.h" />
+    <ClInclude Include="include\Internet\hv\hasync.h" />
+    <ClInclude Include="include\Internet\hv\hatomic.h" />
+    <ClInclude Include="include\Internet\hv\hbase.h" />
+    <ClInclude Include="include\Internet\hv\hbuf.h" />
+    <ClInclude Include="include\Internet\hv\hconfig.h" />
+    <ClInclude Include="include\Internet\hv\hdef.h" />
+    <ClInclude Include="include\Internet\hv\hdir.h" />
+    <ClInclude Include="include\Internet\hv\hendian.h" />
+    <ClInclude Include="include\Internet\hv\herr.h" />
+    <ClInclude Include="include\Internet\hv\hexport.h" />
+    <ClInclude Include="include\Internet\hv\hfile.h" />
+    <ClInclude Include="include\Internet\hv\hlog.h" />
+    <ClInclude Include="include\Internet\hv\hloop.h" />
+    <ClInclude Include="include\Internet\hv\hmain.h" />
+    <ClInclude Include="include\Internet\hv\hmap.h" />
+    <ClInclude Include="include\Internet\hv\hmath.h" />
+    <ClInclude Include="include\Internet\hv\hmutex.h" />
+    <ClInclude Include="include\Internet\hv\hobjectpool.h" />
+    <ClInclude Include="include\Internet\hv\hpath.h" />
+    <ClInclude Include="include\Internet\hv\hplatform.h" />
+    <ClInclude Include="include\Internet\hv\hproc.h" />
+    <ClInclude Include="include\Internet\hv\hscope.h" />
+    <ClInclude Include="include\Internet\hv\hsocket.h" />
+    <ClInclude Include="include\Internet\hv\hssl.h" />
+    <ClInclude Include="include\Internet\hv\hstring.h" />
+    <ClInclude Include="include\Internet\hv\hsysinfo.h" />
+    <ClInclude Include="include\Internet\hv\hthread.h" />
+    <ClInclude Include="include\Internet\hv\hthreadpool.h" />
+    <ClInclude Include="include\Internet\hv\htime.h" />
+    <ClInclude Include="include\Internet\hv\HttpClient.h" />
+    <ClInclude Include="include\Internet\hv\HttpContext.h" />
+    <ClInclude Include="include\Internet\hv\httpdef.h" />
+    <ClInclude Include="include\Internet\hv\HttpMessage.h" />
+    <ClInclude Include="include\Internet\hv\HttpParser.h" />
+    <ClInclude Include="include\Internet\hv\HttpResponseWriter.h" />
+    <ClInclude Include="include\Internet\hv\HttpServer.h" />
+    <ClInclude Include="include\Internet\hv\HttpService.h" />
+    <ClInclude Include="include\Internet\hv\http_content.h" />
+    <ClInclude Include="include\Internet\hv\hurl.h" />
+    <ClInclude Include="include\Internet\hv\hv.h" />
+    <ClInclude Include="include\Internet\hv\hversion.h" />
+    <ClInclude Include="include\Internet\hv\ifconfig.h" />
+    <ClInclude Include="include\Internet\hv\iniparser.h" />
+    <ClInclude Include="include\Internet\hv\json.hpp" />
+    <ClInclude Include="include\Internet\hv\md5.h" />
+    <ClInclude Include="include\Internet\hv\nlog.h" />
+    <ClInclude Include="include\Internet\hv\requests.h" />
+    <ClInclude Include="include\Internet\hv\sha1.h" />
+    <ClInclude Include="include\Internet\hv\singleton.h" />
+    <ClInclude Include="include\Internet\hv\Status.h" />
+    <ClInclude Include="include\Internet\hv\TcpClient.h" />
+    <ClInclude Include="include\Internet\hv\TcpServer.h" />
+    <ClInclude Include="include\Internet\hv\ThreadLocalStorage.h" />
+    <ClInclude Include="include\Internet\hv\UdpClient.h" />
+    <ClInclude Include="include\Internet\hv\UdpServer.h" />
+    <ClInclude Include="include\Internet\hv\WebSocketChannel.h" />
+    <ClInclude Include="include\Internet\hv\WebSocketClient.h" />
+    <ClInclude Include="include\Internet\hv\WebSocketParser.h" />
+    <ClInclude Include="include\Internet\hv\WebSocketServer.h" />
+    <ClInclude Include="include\Internet\hv\wsdef.h" />
+    <ClInclude Include="include\logger\base\commandlineflags.h" />
+    <ClInclude Include="include\logger\base\googleinit.h" />
+    <ClInclude Include="include\logger\demangle.h" />
+    <ClInclude Include="include\logger\glog\flags.h" />
+    <ClInclude Include="include\logger\glog\logging.h" />
+    <ClInclude Include="include\logger\glog\log_severity.h" />
+    <ClInclude Include="include\logger\glog\platform.h" />
+    <ClInclude Include="include\logger\glog\raw_logging.h" />
+    <ClInclude Include="include\logger\glog\stl_logging.h" />
+    <ClInclude Include="include\logger\glog\types.h" />
+    <ClInclude Include="include\logger\glog\vlog_is_on.h" />
+    <ClInclude Include="include\logger\googletest.h" />
+    <ClInclude Include="include\logger\mock-log.h" />
+    <ClInclude Include="include\logger\stacktrace.h" />
+    <ClInclude Include="include\logger\stacktrace_generic-inl.h" />
+    <ClInclude Include="include\logger\stacktrace_libunwind-inl.h" />
+    <ClInclude Include="include\logger\stacktrace_powerpc-inl.h" />
+    <ClInclude Include="include\logger\stacktrace_unwind-inl.h" />
+    <ClInclude Include="include\logger\stacktrace_windows-inl.h" />
+    <ClInclude Include="include\logger\stacktrace_x86-inl.h" />
+    <ClInclude Include="include\logger\symbolize.h" />
+    <ClInclude Include="include\logger\utilities.h" />
+    <ClInclude Include="include\logger\windows\dirent.h" />
+    <ClInclude Include="include\logger\windows\port.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\logger\demangle_unittest.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\hv.lib" />
+    <Library Include="lib\hv_static.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

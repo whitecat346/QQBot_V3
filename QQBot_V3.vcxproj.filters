@@ -18,9 +18,402 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="include\logger\dcheck_unittest\glog_dcheck.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_logging.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_raw_logging.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_stl_logging.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\includes_unittest\glog_includes_vlog_is_on.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\log_severity_unittest\glog_log_severity_constants.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\log_severity_unittest\glog_log_severity_conversion.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\package_config_unittest\working_config\glog_package_config.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\windows\port.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\cleanup_immediately_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\cleanup_with_absolute_prefix_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\cleanup_with_relative_prefix_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\demangle.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\demangle_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\flags.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\fuzz_demangle.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\logging.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\logging_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\mock-log_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\raw_logging.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\signalhandler.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\signalhandler_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\stacktrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\stacktrace_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\stl_logging_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\striplog_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\symbolize.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\symbolize_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\utilities.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\utilities_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="include\logger\vlog_is_on.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\Bot\BotClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
     <None Include=".gitignore" />
+    <None Include="include\logger\config.h.cmake.in" />
+    <None Include="include\logger\demangle_unittest.sh" />
+    <None Include="include\logger\logging_striplog_test.sh" />
+    <None Include="include\logger\logging_unittest.err" />
+    <None Include="include\logger\logging_unittest.out" />
+    <None Include="include\logger\signalhandler_unittest.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\logger\base\commandlineflags.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\base\googleinit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\flags.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\log_severity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\platform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\raw_logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\stl_logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\glog\vlog_is_on.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\windows\dirent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\windows\port.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\demangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\googletest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\mock-log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace_generic-inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace_libunwind-inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace_powerpc-inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace_unwind-inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace_windows-inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\stacktrace_x86-inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\symbolize.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger\utilities.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\AsyncHttpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\axios.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\base64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\Buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\Channel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\Event.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\EventLoop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\EventLoopThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\EventLoopThreadPool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hasync.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hatomic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hbase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hbuf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hdir.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hendian.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\herr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hexport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hlog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hloop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hmain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hmap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hmath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hmutex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hobjectpool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hpath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hplatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hproc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hscope.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hsocket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hssl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hstring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hsysinfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hthread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hthreadpool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\htime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\http_content.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\httpdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpMessage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpResponseWriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\HttpService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hurl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\hversion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\ifconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\iniparser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\json.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\md5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\nlog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\requests.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\sha1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\Status.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\TcpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\TcpServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\ThreadLocalStorage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\UdpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\UdpServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\WebSocketChannel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\WebSocketClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\WebSocketParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\WebSocketServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Internet\hv\wsdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Bot\BotClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\logger\demangle_unittest.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\hv.lib" />
+    <Library Include="lib\hv_static.lib" />
   </ItemGroup>
 </Project>
