@@ -5,26 +5,26 @@
 namespace Bot
 {
 	// API Request form
-	struct RequestMsg
+	struct Request
 	{
-		std::string _action{};
-		std::vector<std::string> _params{};
-		std::string _echo{};
+		const std::string _action{};
+		const std::vector<std::string> _params{};
+		const std::string _echo{};
 	};
 
 	struct Response
 	{
-		std::string _status{};
-		std::string _retcode{};
-		int _data{ NULL };
-		std::string _echo{};
+		const std::string _status{};
+		const std::string _retcode{};
+		const int _data{ NULL };
+		const std::string _echo{};
 	};
 
 	struct Report
 	{
-		long _time{ NULL };
-		long _self_id{ NULL };
-		std::string _post_type{};
+		const long _time{ NULL };
+		const long _self_id{ NULL };
+		const std::string _post_type{};
 	};
 }
 
@@ -34,8 +34,8 @@ public:
 	BotClient() noexcept;
 	explicit BotClient(const std::string serverUrl) noexcept;
 
-	void Close(const int _outCode = 0);
 	void Send();
+	void Close();
 
 private:
 	std::string _serverUrl { "" };
