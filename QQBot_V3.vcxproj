@@ -242,7 +242,7 @@
     <ClCompile Include="include\logger\vlog_is_on.cc" />
     <ClCompile Include="include\logger\windows\port.cc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\BotClient.cpp" />
+    <ClCompile Include="src\Bot\BotClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
