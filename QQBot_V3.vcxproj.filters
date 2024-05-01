@@ -111,7 +111,7 @@
     <ClCompile Include="include\logger\vlog_is_on.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="resource\Bot\BotClient.cpp">
+    <ClCompile Include="src\BotClient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -408,6 +408,36 @@
     <ClInclude Include="include\Bot\BotClient.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\glog\vlog_is_on.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\export.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\flags.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\log_severity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\platform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\raw_logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\stl_logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glog\types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\throwProcessing.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="include\logger\demangle_unittest.txt" />
@@ -415,5 +445,6 @@
   <ItemGroup>
     <Library Include="lib\hv.lib" />
     <Library Include="lib\hv_static.lib" />
+    <Library Include="lib\glog.lib" />
   </ItemGroup>
 </Project>

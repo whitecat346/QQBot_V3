@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Internet/hv/WebSocketClient.h"
+#include <any>
 
 namespace Bot
 {
@@ -8,7 +9,8 @@ namespace Bot
 	struct Request
 	{
 		const std::string _action{};
-		const std::vector<std::string> _params{};
+		const std::vector<std::any> _params{};
+		const std::vector<std::string> _paramsID{};
 		const std::string _echo{};
 	};
 
@@ -32,12 +34,13 @@ class BotClient
 {
 public:
 	BotClient() noexcept;
-	explicit BotClient(const std::string serverUrl) noexcept;
+	explicit BotClient(const std::string __serverUrl) noexcept;
 
-	void Send();
+	void Send(const Bot::Request& _sendRequest);
 	void Close();
 
 private:
-	std::string _serverUrl { "" };
+	std::string _serverUrl { "ws://127.0.0.1:3001" };
 	hv::WebSocketClient _HVwsClient;
+	bool _isConnect = false;
 };

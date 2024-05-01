@@ -242,7 +242,7 @@
     <ClCompile Include="include\logger\vlog_is_on.cc" />
     <ClCompile Include="include\logger\windows\port.cc" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="resource\Bot\BotClient.cpp" />
+    <ClCompile Include="src\BotClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -256,6 +256,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Bot\BotClient.h" />
+    <ClInclude Include="include\glog\export.h" />
+    <ClInclude Include="include\glog\flags.h" />
+    <ClInclude Include="include\glog\logging.h" />
+    <ClInclude Include="include\glog\log_severity.h" />
+    <ClInclude Include="include\glog\platform.h" />
+    <ClInclude Include="include\glog\raw_logging.h" />
+    <ClInclude Include="include\glog\stl_logging.h" />
+    <ClInclude Include="include\glog\types.h" />
+    <ClInclude Include="include\glog\vlog_is_on.h" />
     <ClInclude Include="include\Internet\hv\AsyncHttpClient.h" />
     <ClInclude Include="include\Internet\hv\axios.h" />
     <ClInclude Include="include\Internet\hv\base64.h" />
@@ -349,11 +358,13 @@
     <ClInclude Include="include\logger\utilities.h" />
     <ClInclude Include="include\logger\windows\dirent.h" />
     <ClInclude Include="include\logger\windows\port.h" />
+    <ClInclude Include="src\throwProcessing.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="include\logger\demangle_unittest.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="lib\glog.lib" />
     <Library Include="lib\hv.lib" />
     <Library Include="lib\hv_static.lib" />
   </ItemGroup>
