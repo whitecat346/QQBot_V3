@@ -4,12 +4,14 @@
 
 namespace Bot
 {
+	// API Request form
 	struct RequestMsg
 	{
 		std::string _action{};
 		std::vector<std::string> _params{};
 		std::string _echo{};
 	};
+
 	struct Response
 	{
 		std::string _status{};
@@ -17,6 +19,7 @@ namespace Bot
 		int _data{ NULL };
 		std::string _echo{};
 	};
+
 	struct Report
 	{
 		long _time{ NULL };
