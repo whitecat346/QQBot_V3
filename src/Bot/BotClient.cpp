@@ -92,18 +92,20 @@ std::string RequestMsg::getJSONMsg()
 {
 	std::string _tempJSON{ "{\"action\":\"" + _rqsMsg._action + "\",\"params\":{" };
 
-	for (const auto& [id, value] : _rqsMsg._params)
-	{
-		_tempJSON.append("\"" + id + "\":");
-
-		// add params json
-		if (std::ranges::all_of(id.begin(), id.end(), [] (const char _ch)->bool
-			{
-				return isdigit(_ch);
-			}))
+	std::for_each(_rqsMsg._params.begin(), _rqsMsg._params.end(), [&_tempJSON] (const std::string& id, const std::string& value)
 		{
-			
-		}
-		
-	}
+			_tempJSON.append("\"" + id + "\":");
+
+			// add params json
+			if (std::ranges::all_of(value.begin(), value.end(), [] (const char _ch)->bool { return isdigit(_ch); })
+				|| value == "true" || value == "false")
+				_tempJSON.append(value + ",");
+			else _tempJSON.append("\"" + value + "\",");
+		});
+	_tempJSON.erase(_tempJSON.end() - 1);
+
+	if (_rqsMsg._echo.empty()) _tempJSON.append("}}");
+	else _tempJSON.append("},\"echo\":" + _rqsMsg._echo + "\"}");
+
+	return _tempJSON;
 }
