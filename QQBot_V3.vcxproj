@@ -157,6 +157,7 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <EnableModules>true</EnableModules>
       <BuildStlModules>true</BuildStlModules>
+      <AdditionalIncludeDirectories>D:\Project\QQBot_V3\include\glog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -243,6 +244,7 @@
     <ClCompile Include="include\logger\windows\port.cc" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Bot\BotClient.cpp" />
+    <ClCompile Include="src\Methould\Default.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -256,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Bot\BotClient.h" />
+    <ClInclude Include="include\Bot\Message.h" />
     <ClInclude Include="include\glog\export.h" />
     <ClInclude Include="include\glog\flags.h" />
     <ClInclude Include="include\glog\logging.h" />
@@ -358,6 +361,7 @@
     <ClInclude Include="include\logger\utilities.h" />
     <ClInclude Include="include\logger\windows\dirent.h" />
     <ClInclude Include="include\logger\windows\port.h" />
+    <ClInclude Include="include\Methould\Default.h" />
     <ClInclude Include="src\throwProcessing.hpp" />
   </ItemGroup>
   <ItemGroup>

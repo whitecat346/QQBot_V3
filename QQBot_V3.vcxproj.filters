@@ -114,6 +114,9 @@
     <ClCompile Include="src\Bot\BotClient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Methould\Default.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -436,6 +439,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\throwProcessing.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Methould\Default.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Bot\Message.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

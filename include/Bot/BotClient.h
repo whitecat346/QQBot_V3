@@ -3,6 +3,9 @@
 #include "../Internet/hv/WebSocketClient.h"
 #include "../Methould/Default.h"
 #include "Message.h"
+#include <map>
+
+
 
 class BotClient
 {
@@ -18,11 +21,15 @@ public:
 	void SetResponseMethod(const void* _functionPtr);
 
 private:
+
+	// WebSocket
 	std::string _serverUrl { "ws://127.0.0.1:3001" };
 	hv::WebSocketClient _HVwsClient;
 	bool _isConnect = false;
+	reconn_setting_t reconn;
 
-
+	// user command function
+	std::map<std::string, void*> _funcMap;
 
 	// Method
 	void* responseMethod = &MethodDefault::responseMet;

@@ -4,10 +4,34 @@
 #include "../../include/Bot/Message.h"
 #include <string>
 
-BotClient::BotClient() {};
+BotClient::BotClient()
+{
+	// set ping interval
+	_HVwsClient.setPingInterval(10000);
+
+	// reconnect time 1 2 4 8 10 10
+	reconn_setting_init(&reconn);
+	reconn.min_delay = 1000;
+	reconn.max_delay = 10000;
+	reconn.delay_policy = 2;
+	_HVwsClient.setReconnect(&reconn);
+
+
+}
 
 BotClient::BotClient(const std::string serverUrl) : _serverUrl(serverUrl)
 {
+	// set ping interval
+	_HVwsClient.setPingInterval(10000);
+
+	// reconnect time 1 2 4 8 10 10
+	reconn_setting_init(&reconn);
+	reconn.min_delay = 1000;
+	reconn.max_delay = 10000;
+	reconn.delay_policy = 2;
+	_HVwsClient.setReconnect(&reconn);
+
+	// try to connect on server
 	_HVwsClient.open(serverUrl.c_str());
 	_isConnect = true;
 }
