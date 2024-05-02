@@ -3,6 +3,9 @@
 #include "../throwProcessing.hpp"
 #include "../../include/Bot/Message.h"
 #include <string>
+#include <algorithm>
+
+
 
 BotClient::BotClient()
 {
@@ -36,49 +39,71 @@ BotClient::BotClient(const std::string serverUrl) : _serverUrl(serverUrl)
 	_isConnect = true;
 }
 
-void BotClient::Send(const Bot::Request& _sendRequest)
+void BotClient::Send(const RequestMsg& _sendRequest)
 {
-	
-
-	// params analyse
-	try
-	{
-		if (_isConnect == false)	// analyse connect on server
-			throw 1;
-
-		if (_sendRequest._params.size() != _sendRequest._paramsID.size())	// analyse params array is standard
-			throw throwProcessing::BadRequestParams();
-	}
-	catch (throwProcessing::BadRequestParams& brp)
-	{
-		brp.what();
-	}
-	catch (int)
-	{
-		std::cerr << "Not connect on server." << std::endl;
-		abort();
-	}
-
-	std::string requestJSON = "{\"action\":\"";
-	requestJSON.append(_sendRequest._action).append("\",\"params\":{");
-
-	// build request json
-	for ( int i = 0; i < _sendRequest._params.size(); i ++ )
-	{
-		requestJSON.append("\"" + _sendRequest._paramsID.at(i) + "\": ");	// params id
-		if (_sendRequest._params.at(i).type() == typeid(std::string))
-			requestJSON.append("\"" + std::any_cast<std::string>(_sendRequest._params.at(i)) + "\"");	// params is string
-		else requestJSON.append(std::any_cast<std::string>(_sendRequest._params.at(i)));
-
-		if (++i != _sendRequest._params.size()) requestJSON.append(",");	// not last params
-	}
-
-	// add echo (if have)
-	if (!_sendRequest._echo.empty())
-		requestJSON.append("},\"echo\": \"" + _sendRequest._echo + "\"}");
-	else
-		requestJSON.append("}}");
-
-	_HVwsClient.send(requestJSON);
+	std::string _tmpMsgJSON;
 }
 
+RequestMsg::RequestMsg(const std::string& _action)
+{
+	_rqsMsg._action = _action;
+}
+
+void RequestMsg::AddParams(const std::string _id, const std::string _value)
+{
+	_rqsMsg._params.insert_or_assign(_id, _value);
+}
+
+void RequestMsg::AddEcho(const std::string& _echo)
+{
+	_rqsMsg._echo = _echo;
+}
+
+void RequestMsg::DelParams(const std::string _id)
+{
+	_rqsMsg._params.erase(_id);
+}
+
+void RequestMsg::DelEcho()
+{
+	_rqsMsg._echo.clear();
+}
+
+void RequestMsg::ChangeParams(const std::string _id, const std::string _newValue)
+{
+	_rqsMsg._params.insert_or_assign(_id, _newValue);
+}
+
+void RequestMsg::ChangeParams(const std::string _id, const std::string _newID, const std::string _newValue)
+{
+}
+
+void RequestMsg::ChangeAction(const std::string& _newAction)
+{
+	_rqsMsg._action = _newAction;
+}
+
+void RequestMsg::ChangeEcho(const std::string& _newEcho)
+{
+	_rqsMsg._echo = _newEcho;
+}
+
+std::string RequestMsg::getJSONMsg()
+{
+	std::string _tempJSON{ "{\"action\":\"" + _rqsMsg._action + "\",\"params\":{" };
+
+	for (const auto& [id, value] : _rqsMsg._params)
+	{
+		_tempJSON.append("\"" + id + "\":");
+
+		// add params json
+		if (std::ranges::all_of(id.begin(), id.end(), [] (const char _ch)->bool
+			{
+				return isdigit(_ch);
+			}))
+		{
+			
+		}
+		
+	}
+}
