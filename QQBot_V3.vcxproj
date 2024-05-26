@@ -211,6 +211,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\json\simdjson.cpp" />
     <ClCompile Include="include\logger\cleanup_immediately_unittest.cc" />
     <ClCompile Include="include\logger\cleanup_with_absolute_prefix_unittest.cc" />
     <ClCompile Include="include\logger\cleanup_with_relative_prefix_unittest.cc" />
@@ -337,6 +338,8 @@
     <ClInclude Include="include\Internet\hv\WebSocketParser.h" />
     <ClInclude Include="include\Internet\hv\WebSocketServer.h" />
     <ClInclude Include="include\Internet\hv\wsdef.h" />
+    <ClInclude Include="include\json\json.hpp" />
+    <ClInclude Include="include\json\simdjson.h" />
     <ClInclude Include="include\logger\base\commandlineflags.h" />
     <ClInclude Include="include\logger\base\googleinit.h" />
     <ClInclude Include="include\logger\demangle.h" />

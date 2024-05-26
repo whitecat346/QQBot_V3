@@ -117,6 +117,9 @@
     <ClCompile Include="src\Methould\Default.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="include\json\simdjson.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -445,6 +448,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\Bot\Message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\simdjson.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\json\json.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
